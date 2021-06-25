@@ -157,6 +157,7 @@ function elementClick(ev) {
     }
 }
 
+//This is the only function duplicated between search and periodic table because the search function filters the data requested from Cordra
 async function runSearch(
     query,
     pageSize,
