@@ -244,3 +244,34 @@ function endingPaginationNumber(currentPageNumber, totalNumOfPages) {
     }
     return result;
 }
+
+function resetPage() {
+    let resetURL = createNewUrlString('', 10, 0, '', '', '', '');
+    window.location.href = resetURL;
+    elementsRequired = [];
+    elementsNameRequired = [];
+    elementsExcluded = [];
+    elementsNameExcluded = [];
+    elementsSelected = [];
+}
+
+function submitSearch() {
+    let query = document.getElementById('searchBox').value;
+    let elmReq = elementsRequired;
+    let elmEx = elementsExcluded;
+    let pageSize = document.getElementById('pageSize').value;
+    let pageNum = 0;
+    let namesReq = elementsNameRequired;
+    let namesEx = elementsNameExcluded;
+
+    let newURL = createNewUrlString(
+        query,
+        pageSize,
+        pageNum,
+        elmReq,
+        elmEx,
+        namesReq,
+        namesEx
+    );
+    window.location.href = newURL;
+}
